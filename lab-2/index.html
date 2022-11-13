@@ -320,9 +320,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#forms" class="md-nav__link">
     Forms
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    URLs
+  </a>
+  
+    <nav class="md-nav" aria-label="URLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Проект
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приложение
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -382,9 +416,43 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    Templates
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#forms" class="md-nav__link">
     Forms
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls" class="md-nav__link">
+    URLs
+  </a>
+  
+    <nav class="md-nav" aria-label="URLs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    Проект
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    Приложение
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -422,8 +490,257 @@
 постояльцев отеля за последний месяц.</li>
 </ul>
 <h2 id="models">Models</h2>
+<p><code>models.py</code> содержит все модели приложения. </p>
+<p><strong>Модель отеля</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">Hotel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">63</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">owner</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">address</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+</code></pre></div>
+Все поля являются обязательным, отражают:</p>
+<ul>
+<li>Название отеля;</li>
+<li>Его владельца;</li>
+<li>Адрес;</li>
+<li>Описание.</li>
+</ul>
+<p><strong>Модель комнаты</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span> <span class="nc">Room</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">number</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">()</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">hotel</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Hotel</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">type</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">127</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">cost</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveIntegerField</span><span class="p">()</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">beds</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">()</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">amenities</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">,</span> <span class="n">blank</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+Поля:</p>
+<ul>
+<li>Номер комнаты;</li>
+<li>Отель, в котором комната (вн. ключ на отель);</li>
+<li>Тип комнаты;</li>
+<li>Цена за ночь;</li>
+<li>Кол-во мест;</li>
+<li>Удобства (необязательное поле).</li>
+</ul>
+<p><strong>Модель брони</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">Booking</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">reservee</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">reservation</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Room</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">date_start</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">date_end</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateField</span><span class="p">()</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">approved</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">BooleanField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+Поля:</p>
+<ul>
+<li>Гость (вн. ключ на пользователя);</li>
+<li>Номер (вн. ключ на комнату);</li>
+<li>Начало и конец бронирования;</li>
+<li>Согласовано или нет (решает администратор в панели).</li>
+</ul>
+<p><strong>Модель комменты</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">class</span> <span class="nc">Review</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">booking</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Booking</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">rating</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">PositiveSmallIntegerField</span><span class="p">(</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">validators</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>            <span class="n">MaxValueValidator</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="n">MinValueValidator</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="p">]</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="p">)</span>
+</code></pre></div>
+Поля:</p>
+<ul>
+<li>Бронь (вн. ключ на бронь);</li>
+<li>Текст комментария;</li>
+<li>Рейтинг (от 1 до 10 через валидаторы.).</li>
+</ul>
+<p><em>NB:</em> через внешний ключ брони можно получить всю необходимую дополнительную информацию:</p>
+<ul>
+<li>Автора;</li>
+<li>Время брони.</li>
+</ul>
 <h2 id="views">Views</h2>
+<p><code>views.py</code> содержит все представления.</p>
+<p><strong>Представления отеля</strong></p>
+<ul>
+<li>Все отели:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span> <span class="nc">HotelListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Hotel</span>
+</code></pre></div>
+<ul>
+<li>Конкретный отель:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span> <span class="nc">HotelDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Hotel</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;rooms&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Room</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">hotel</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="n">room_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">room</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">room</span> <span class="ow">in</span> <span class="n">context</span><span class="p">[</span><span class="s2">&quot;rooms&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>        <span class="n">delta</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;bookings&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Booking</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">reservation__in</span><span class="o">=</span><span class="n">room_ids</span><span class="p">,</span> <span class="n">date_end__gte</span><span class="o">=</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">-</span><span class="n">delta</span><span class="p">))</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;reservees&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">id__in</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="p">[</span><span class="n">booking</span><span class="p">[</span><span class="s2">&quot;reservee_id&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">booking</span> <span class="ow">in</span> <span class="n">context</span><span class="p">[</span><span class="s2">&quot;bookings&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()]))</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
+<p>Функция <code>get_context_data</code> получает дополнительные данные для контекста:</p>
+<ul>
+<li>Все комнаты, у которых ключ на выбранный отель;</li>
+<li>Списком гостей за последние 30 дней.</li>
+</ul>
+<p>Список гостей формируется с помощью нескольких последовательный запросов, которые изначально ищут все бронирования за последние 30 дней, а в них уникальных гостей.</p>
+<p><strong>Представления комнаты</strong></p>
+<ul>
+<li>Конкретная комната:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">class</span> <span class="nc">RoomDetailView</span><span class="p">(</span><span class="n">DetailView</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Room</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">bookings</span> <span class="o">=</span> <span class="n">Booking</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">reservation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="n">booking_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">booking</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">booking</span> <span class="ow">in</span> <span class="n">bookings</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="n">reviews</span> <span class="o">=</span> <span class="n">Review</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">booking__in</span><span class="o">=</span><span class="n">booking_ids</span><span class="p">)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>        <span class="n">reviews_by_user</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>        <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="k">if</span> <span class="n">review</span><span class="o">.</span><span class="n">booking</span><span class="o">.</span><span class="n">reservee</span> <span class="o">==</span> <span class="n">user</span><span class="p">:</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                <span class="n">reviews_by_user</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>        <span class="k">for</span> <span class="n">booking</span> <span class="ow">in</span> <span class="n">bookings</span><span class="p">:</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>            <span class="k">if</span> <span class="n">booking</span><span class="o">.</span><span class="n">reservee</span> <span class="o">==</span> <span class="n">user</span><span class="p">:</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>                <span class="n">reviews_by_user</span> <span class="o">-=</span> <span class="mi">1</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="n">review_form</span> <span class="o">=</span> <span class="n">ReviewForm</span><span class="p">()</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="k">if</span> <span class="n">reviews_by_user</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>            <span class="n">review_form</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">booking_form</span> <span class="o">=</span> <span class="n">BookingForm</span><span class="p">()</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;reviews&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reviews</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;review_form&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">review_form</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;booking_form&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">booking_form</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>        <span class="k">return</span> <span class="n">context</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">user</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>        <span class="n">room</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_object</span><span class="p">()</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>        <span class="k">if</span> <span class="s1">&#39;review_post&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">:</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>            <span class="n">review_form</span> <span class="o">=</span> <span class="n">ReviewForm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>            <span class="k">if</span> <span class="n">review_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>                <span class="n">review_form</span> <span class="o">=</span> <span class="n">review_form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>                <span class="n">review_form</span><span class="o">.</span><span class="n">booking</span> <span class="o">=</span> <span class="n">Booking</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">reservation</span><span class="o">=</span><span class="n">room</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">reservee</span><span class="o">=</span><span class="n">user</span><span class="p">)</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a>                <span class="n">review_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a>        <span class="k">elif</span> <span class="s1">&#39;booking_post&#39;</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">:</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a>            <span class="n">booking_form</span> <span class="o">=</span> <span class="n">BookingForm</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a>            <span class="k">if</span> <span class="n">booking_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a>                <span class="n">booking_form</span> <span class="o">=</span> <span class="n">booking_form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a>                <span class="n">booking_form</span><span class="o">.</span><span class="n">reservee</span> <span class="o">=</span> <span class="n">user</span>
+<a id="__codelineno-6-45" name="__codelineno-6-45" href="#__codelineno-6-45"></a>                <span class="n">booking_form</span><span class="o">.</span><span class="n">reservation</span> <span class="o">=</span> <span class="n">room</span>
+<a id="__codelineno-6-46" name="__codelineno-6-46" href="#__codelineno-6-46"></a>                <span class="n">booking_form</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+<a id="__codelineno-6-47" name="__codelineno-6-47" href="#__codelineno-6-47"></a>                <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;bookings&#39;</span><span class="p">))</span>
+<a id="__codelineno-6-48" name="__codelineno-6-48" href="#__codelineno-6-48"></a>        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;get_room&#39;</span><span class="p">,</span>
+<a id="__codelineno-6-49" name="__codelineno-6-49" href="#__codelineno-6-49"></a>                                            <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;hotel_id&#39;</span><span class="p">],</span> <span class="n">room</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
+</code></pre></div>
+<p>Функция <code>get_context_data</code> дополнительно получает в контекст:</p>
+<ul>
+<li>Все обзоры, которые оставлялись на бронь данной комнаты;</li>
+<li>Форма бронирования;</li>
+<li>Форма отзыва, если пользователь бронировал большее число раз, чем уже оставил отзывов.</li>
+</ul>
+<p>Функция <code>post</code> обрабатывает формы, если пользователь сделал бронь, то перенаправляет его к своим броням.</p>
+<p><strong>Представления брони</strong></p>
+<ul>
+<li>Все брони гостя:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">class</span> <span class="nc">BookingListView</span><span class="p">(</span><span class="n">ListView</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Booking</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">reservee</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span><span class="p">)</span>
+</code></pre></div>
+<ul>
+<li>Форма удаления брони:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">class</span> <span class="nc">BookingDeleteView</span><span class="p">(</span><span class="n">DeleteView</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Booking</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s1">&#39;/bookings/&#39;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;valid_user&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">reservee</span> <span class="o">==</span> <span class="n">user</span> <span class="k">else</span> <span class="kc">False</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
+<ul>
+<li>Форма изменения брони:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">BookingUpdateView</span><span class="p">(</span><span class="n">UpdateView</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">Booking</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date_start&#39;</span><span class="p">,</span> <span class="s1">&#39;date_end&#39;</span><span class="p">]</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">success_url</span> <span class="o">=</span> <span class="s1">&#39;/bookings/&#39;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="k">def</span> <span class="nf">get_context_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="n">context</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">get_context_data</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="n">user</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">user</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">context</span><span class="p">[</span><span class="s2">&quot;valid_user&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">object</span><span class="o">.</span><span class="n">reservee</span> <span class="o">==</span> <span class="n">user</span> <span class="k">else</span> <span class="kc">False</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>        <span class="k">return</span> <span class="n">context</span>
+</code></pre></div>
+<p><em>NB:</em> у обеих форм есть проверка на то, что никто кроме гостя (и администратора) не может получить к ней доступ. </p>
+<h2 id="templates">Templates</h2>
+<p>В <code>hotels_app/templates</code> содержатся шаблоны под каждое представление.</p>
 <h2 id="forms">Forms</h2>
+<p><code>forms.py</code> содержит все формы.</p>
+<p><strong>Форма обзора</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">class</span> <span class="nc">ReviewForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">Review</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">]</span>
+</code></pre></div>
+<p><strong>Форма брони</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">BookingForm</span><span class="p">(</span><span class="n">ModelForm</span><span class="p">):</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>        <span class="n">model</span> <span class="o">=</span> <span class="n">Booking</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>        <span class="n">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;date_start&#39;</span><span class="p">,</span> <span class="s1">&#39;date_end&#39;</span><span class="p">]</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        <span class="n">cleaned_data</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="n">start_date</span> <span class="o">=</span> <span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;date_start&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="n">end_date</span> <span class="o">=</span> <span class="n">cleaned_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;date_end&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        <span class="k">if</span> <span class="n">end_date</span> <span class="o">&lt;</span> <span class="n">start_date</span><span class="p">:</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>            <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="s2">&quot;End date should be greater than start date.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Есть проверка на то, что дата начала брони должна быть до конца.</p>
+<h2 id="urls">URLs</h2>
+<h3 id="_1">Проект</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">path</span><span class="p">(</span><span class="s2">&quot;admin/&quot;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;accounts/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;allauth.urls&#39;</span><span class="p">)),</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;hotels_app.urls&quot;</span><span class="p">)),</span>
+</code></pre></div>
+<p>Есть три возможных маршрута:
+1. Админка;
+2. Аккаунты (<code>django-allauth</code>);
+3. Приложение (<code>hotels_app</code>).</p>
+<h3 id="_2">Приложение</h3>
+<p><strong>Пути до отеля и комнат:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;hotel/list/&#39;</span><span class="p">,</span> <span class="n">HotelListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;hotel/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">HotelDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;hotel/&lt;hotel_id&gt;/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">RoomDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;get_room&quot;</span><span class="p">),</span>
+</code></pre></div>
+<p><strong>Пути до бронь:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;bookings/&#39;</span><span class="p">,</span> <span class="n">login_required</span><span class="p">(</span><span class="n">BookingListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;bookings&quot;</span><span class="p">),</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;bookings/&lt;int:pk&gt;/delete/&#39;</span><span class="p">,</span> <span class="n">login_required</span><span class="p">(</span><span class="n">BookingDeleteView</span><span class="o">.</span><span class="n">as_view</span><span class="p">())),</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;bookings/&lt;int:pk&gt;/update/&#39;</span><span class="p">,</span> <span class="n">login_required</span><span class="p">(</span><span class="n">BookingUpdateView</span><span class="o">.</span><span class="n">as_view</span><span class="p">())),</span>
+</code></pre></div>
+<ul>
+<li>Все представления являются <em>class based</em>, поэтому используется метод <code>as_view()</code>;</li>
+<li>У представлений, которые доступны только авторизованным пользователям есть проверка на логин <code>login_required()</code>.</li>
+</ul>
 
 
 
