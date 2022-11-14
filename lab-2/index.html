@@ -342,15 +342,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Проект
+  <a href="#project" class="md-nav__link">
+    Project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Приложение
+  <a href="#apps" class="md-nav__link">
+    Apps
   </a>
   
 </li>
@@ -361,8 +361,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Примеры
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -445,15 +445,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    Проект
+  <a href="#project" class="md-nav__link">
+    Project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    Приложение
+  <a href="#apps" class="md-nav__link">
+    Apps
   </a>
   
 </li>
@@ -464,8 +464,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    Примеры
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
 </li>
@@ -731,7 +731,7 @@
 </code></pre></div>
 <p>Есть проверка на то, что дата начала брони должна быть до конца.</p>
 <h2 id="urls">URLs</h2>
-<h3 id="_1">Проект</h3>
+<h3 id="project">Project</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">path</span><span class="p">(</span><span class="s2">&quot;admin/&quot;</span><span class="p">,</span> <span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;accounts/&#39;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s1">&#39;allauth.urls&#39;</span><span class="p">)),</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">path</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">include</span><span class="p">(</span><span class="s2">&quot;hotels_app.urls&quot;</span><span class="p">)),</span>
@@ -740,7 +740,7 @@
 1. Админка;
 2. Аккаунты (<code>django-allauth</code>);
 3. Приложение (<code>hotels_app</code>).</p>
-<h3 id="_2">Приложение</h3>
+<h3 id="apps">Apps</h3>
 <p><strong>Пути до отеля и комнат:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;hotel/list/&#39;</span><span class="p">,</span> <span class="n">HotelListView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">path</span><span class="p">(</span><span class="s1">&#39;hotel/&lt;int:pk&gt;/&#39;</span><span class="p">,</span> <span class="n">HotelDetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span>
@@ -755,8 +755,8 @@
 <li>Все представления являются <em>class based</em>, поэтому используется метод <code>as_view()</code>;</li>
 <li>У представлений, которые доступны только авторизованным пользователям есть проверка на логин <code>login_required()</code>.</li>
 </ul>
-<h2 id="_3">Примеры</h2>
-<p><img alt="Hotel" src="/images/hotel.png" /></p>
+<h2 id="examples">Examples</h2>
+<p><img alt="Hotel" src="../images/hotel.png" /></p>
 
 
 
