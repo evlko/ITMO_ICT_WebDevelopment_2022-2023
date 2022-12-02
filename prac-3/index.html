@@ -339,6 +339,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -383,6 +397,20 @@
         <li class="md-nav__item">
   <a href="#31" class="md-nav__link">
     3.1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3
   </a>
   
 </li>
@@ -484,118 +512,106 @@
 </code></pre></div></p>
 </li>
 </ul>
-<h1 id="32">3.2</h1>
+<h2 id="32">3.2</h2>
 <ol>
-<li>Получение всех машин марки <code>Mario Kart</code>:</li>
-<li>Запрос:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">brand</span> <span class="o">=</span> <span class="s2">&quot;Mario Kart&quot;</span><span class="p">)</span>
-</code></pre></div></li>
 <li>
-<p>Результат:
+<p>Получение всех машин марки <code>Mario Kart</code>:
+Запрос:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">brand</span> <span class="o">=</span> <span class="s2">&quot;Mario Kart&quot;</span><span class="p">)</span>
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="n">Deluxe</span> <span class="mi">8</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="mi">7</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="mi">8</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="mi">8</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="n">DS</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="n">Car</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Kart</span> <span class="n">MK</span> <span class="mi">64</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Получение всех водителей с именем <code>Mario</code>:</p>
-</li>
-<li>Запрос:
+<p>Получение всех водителей с именем <code>Mario</code>:
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Mario&quot;</span><span class="p">)</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Owner</span><span class="p">:</span> <span class="n">Mario</span> <span class="n">Mario</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
 </code></pre></div>
 <strong>NB:</strong> тут стоило было бы применить <code>first_name__contains</code>, если бы имя было составным, но для фамилии существует отдельное поле.</p>
 </li>
 <li>
-<p>Получение удостоверения случайного водителя:</p>
-</li>
-<li>Запрос:
+<p>Получение удостоверения случайного водителя:
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">DriverLicense</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">license_owner</span> <span class="o">=</span> <span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s2">&quot;?&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">&lt;</span><span class="n">DriverLicense</span><span class="p">:</span> <span class="n">DriverLicense</span> <span class="nb">object</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Получение всех владельцев машин с цветом <code>orange</code>:</p>
-</li>
-<li>Запрос:
+<p>Получение всех владельцев машин с цветом <code>orange</code>:
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">cars__color__contains</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">)</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Owner</span><span class="p">:</span> <span class="n">Princess</span> <span class="n">Daisy</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
 </code></pre></div>
 <strong>NB:</strong> у машины может быть составной цвет, например, “Yellow, Red”, поэтому идет проверка на наличие, а не на эквивалентность.</p>
 </li>
 <li>
-<p>Получить всех владельцев, чей год владения машиной начинается с 2022:</p>
-</li>
-<li>Запрос:
+<p>Получить всех владельцев, чей год владения машиной начинается с 2022:
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">Owner</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">ownership__date_start__gte</span><span class="o">=</span><span class="s1">&#39;2022-01-01&#39;</span><span class="p">)</span>
-</code></pre></div></li>
-<li>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[</span><span class="o">&lt;</span><span class="n">Owner</span><span class="p">:</span> <span class="n">Princess</span> <span class="n">Daisy</span><span class="o">&gt;</span><span class="p">]</span><span class="o">&gt;</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 </ol>
 <h2 id="33">3.3</h2>
 <ol>
-<li>Вывод даты выдачи самого старшего водительского удостоверения</li>
-<li>Запрос:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">DriverLicense</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;issue_date&#39;</span><span class="p">))</span>
-</code></pre></div></li>
 <li>
-<p>Результат:
+<p>Вывод даты выдачи самого старшего водительского удостоверения
+Запрос:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">DriverLicense</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">Min</span><span class="p">(</span><span class="s1">&#39;issue_date&#39;</span><span class="p">))</span>
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">{</span><span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)}</span>
 </code></pre></div>
 <strong>NB:</strong> необходимо сделать <code>from django.db.models import Min</code></p>
 </li>
 <li>
-<p>Укажите самую позднюю дату владения машиной, имеющую какую-то из существующих моделей в вашей базе</p>
-</li>
-<li>Запрос:
+<p>Укажите самую позднюю дату владения машиной, имеющую какую-то из существующих моделей в вашей базе
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">Ownership</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">start_date</span><span class="o">=</span><span class="n">Max</span><span class="p">(</span><span class="s1">&#39;date_start&#39;</span><span class="p">))</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">{</span><span class="s1">&#39;start_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)}</span>
 </code></pre></div>
 <strong>NB:</strong> необходимо сделать <code>from django.db.models import Max</code></p>
 </li>
 <li>
-<p>Выведите количество машин для каждого водителя</p>
-</li>
-<li>Запрос:
+<p>Выведите количество машин для каждого водителя
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Ownership</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;ownership_car&#39;</span><span class="p">))</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;bo&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;daisy&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;koong&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;peach&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;supermario&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;ownership_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;yoy&#39;</span><span class="p">,</span> <span class="s1">&#39;ownership_car__count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}]</span><span class="o">&gt;</span>
 </code></pre></div>
 <strong>NB:</strong> необходимо сделать <code>from django.db.models import Count</code></p>
 </li>
 <li>
-<p>Подсчитайте количество машин каждой марки</p>
-</li>
-<li>Запрос:
+<p>Подсчитайте количество машин каждой марки
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Car</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;brand&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">Count</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">))</span>
-</code></pre></div></li>
-<li>
-<p>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[{</span><span class="s1">&#39;brand&#39;</span><span class="p">:</span> <span class="s1">&#39;Mario Kart&#39;</span><span class="p">,</span> <span class="s1">&#39;id__count&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">}</span><span class="o">&gt;</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Отсортируйте всех автовладельцев по дате выдачи удостоверения </p>
-</li>
-<li>Запрос:
+<p>Отсортируйте всех автовладельцев по дате выдачи удостоверения 
+Запрос:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">DriverLicense</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;issue_date&#39;</span><span class="p">)</span>
-</code></pre></div></li>
-<li>Результат:
+</code></pre></div>
+Результат:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="o">&lt;</span><span class="n">QuerySet</span> <span class="p">[{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;peach&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;daisy&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;yoyo&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;bo&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;koong&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;license_owner__username&#39;</span><span class="p">:</span> <span class="s1">&#39;supermario&#39;</span><span class="p">}]</span><span class="o">&gt;</span>
-</code></pre></div></li>
+</code></pre></div></p>
+</li>
 </ol>
 
 
