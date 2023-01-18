@@ -25,3 +25,16 @@ export default router
 ```
 
 **NB.** Вход и регистрация — модальные окна, поэтому их нет в роутинге.
+
+## router link
+
+Линков много, например, карточка сценария:
+
+``` html
+    <div class="card shadow-sm rounded d-flex flex-column h-100">
+        <router-link :to="{name:'scenario', params:{ id: id }}" class="card-body row flex-grow-1 p-0">
+            ...
+        </router-link>
+        ...
+    </div>
+```
