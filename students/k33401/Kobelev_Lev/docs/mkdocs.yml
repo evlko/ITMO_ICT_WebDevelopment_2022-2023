@@ -20,6 +20,9 @@ nav:
         - API: lab-3-api.md
     - Lab 4:
         - Task: lab-4-task.md
+        - API: lab-4-api.md
+        - Stores: lab-4-stores.md
+        - Router: lab-4-router.md
 
 theme:
   name: material
