@@ -18,6 +18,8 @@ nav:
         - Serializers: lab-3-serializers.md
         - URLs: lab-3-url.md
         - API: lab-3-api.md
+    - Lab 4:
+        - Task: lab-4-task.md
 
 theme:
   name: material
