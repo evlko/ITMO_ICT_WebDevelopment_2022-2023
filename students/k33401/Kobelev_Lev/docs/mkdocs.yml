@@ -22,6 +22,7 @@ nav:
         - Task: lab-4-task.md
         - API: lab-4-api.md
         - Stores: lab-4-stores.md
+        - Components: lab-4-components.md
         - Router: lab-4-router.md
 
 theme:
